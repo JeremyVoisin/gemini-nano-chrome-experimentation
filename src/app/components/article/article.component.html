@@ -1,0 +1,15 @@
+<mat-expansion-panel hideToggle>
+	<mat-expansion-panel-header>
+		<mat-panel-title>{{article()?.title}}</mat-panel-title>
+		<mat-panel-description>
+			By {{article()?.author}}
+		</mat-panel-description>
+	</mat-expansion-panel-header>
+    <!-- <h4>{{article()?.title}}</h4> -->
+    <div class="space-between">
+        <div class="flex-1"><small>{{article()?.author}} - {{article()?.date}}</small></div>
+        <div class="flex-1 align-right"><a [href]="article()?.url">{{article()?.url}}</a></div>
+    </div>
+    <p>{{article()?.summary}}</p>
+    <small>Generated with {{article()?.origin}}</small>
+</mat-expansion-panel>

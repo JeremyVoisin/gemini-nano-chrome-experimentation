@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; background-color: var(--mat-app-background-color); color: var(--mat-app-text-color); max-width: 1200px; margin: auto;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.flex-1{
+    flex: 1;
+}
+
+.space-between{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.align-right{
+    text-align: right;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.b-none{
+    .mdc-text-field--filled:not(.mdc-text-field--disabled){
+        background: transparent;
+    }
+}

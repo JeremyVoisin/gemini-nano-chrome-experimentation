@@ -1,0 +1,39 @@
+<h1>Welcome to Bookmarker 🚀</h1>
+<div class="d-flex spacing">
+	<div class="flex-1">
+		<mat-form-field class="w-100 b-none">
+			<mat-label>Put a link or ask something for magic</mat-label>
+			<input matInput type="text" [(ngModel)]="link" />
+			@if (link) {
+			<button
+				matSuffix
+				mat-icon-button
+				aria-label="Clear"
+				(click)="link = ''"
+			>
+				<mat-icon>close</mat-icon>
+			</button>
+			}
+		</mat-form-field>
+	</div>
+	<div>
+		@if(!generating()){
+            @if(isLink){
+                <button mat-raised-button (click)="summarizeArticle()">Summarize</button>
+            } @else if(linkNotEmpty) {
+                <button mat-raised-button (click)="askQuestion()">Ask</button>
+            } @else {
+                <button mat-raised-button (click)="resetFilter()">Reset</button>
+            }
+		} @else {
+		<mat-spinner [diameter]="40"></mat-spinner>
+		}
+	</div>
+</div>
+
+<mat-accordion>
+	@for (item of articles(); track item) {
+	<app-article [article]="item"></app-article>
+    <mat-divider></mat-divider>
+	}
+</mat-accordion>
